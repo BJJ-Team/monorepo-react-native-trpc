@@ -1,0 +1,14 @@
+{
+  "name": "@template/shared-types",
+  "version": "0.0.0",
+  "scripts": {
+    "type:check": "tsc",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier -c \"**/*.{ts,tsx}\""
+  },
+  "devDependencies": {
+    "@template/eslint-config": "workspace:*",
+    "@template/typescript-config": "workspace:*",
+    "typescript": "^5.5.3"
+  }
+}

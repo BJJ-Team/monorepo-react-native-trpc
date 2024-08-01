@@ -1,0 +1,12 @@
+{
+  "extends": "@template/typescript-config/base.json",
+  "include": ["src", "index.ts", "vitest.config.mts", "prisma"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "noEmit": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@template/shared-types": ["../../packages/shared-types"]
+    }
+  }
+}

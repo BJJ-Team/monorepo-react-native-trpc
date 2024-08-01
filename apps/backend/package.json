@@ -1,0 +1,46 @@
+{
+  "name": "@template/backend",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/server.js",
+  "imports": {
+    "@/trpc": "./src/trpc",
+    "@/utils": "./src/utils"
+  },
+  "scripts": {
+    "build": "pkgroll -minify",
+    "type:check": "tsc",
+    "dev": "tsx --env-file=.env --watch src/server.ts",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier -c \"src/**/*.{ts,tsx}\"",
+    "test": "vitest --run",
+    "test:watch": "vitest",
+    "prisma:seed": "prisma db seed",
+    "prisma:generate": "prisma generate",
+    "prisma:migration": "prisma migrate dev --create-only",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "prisma:migrate:reset": "prisma migrate reset",
+    "postinstall": "prisma generate"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seeding/index.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "5.17.0",
+    "dayjs": "^1.11.11",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@template/eslint-config": "workspace:*",
+    "@template/shared-types": "workspace:*",
+    "@template/typescript-config": "workspace:*",
+    "@trpc/server": "11.0.0-rc.382",
+    "@types/uuid": "^10.0.0",
+    "pkgroll": "^2.1.1",
+    "prisma": "^5.17.0",
+    "tsx": "^4.11.0",
+    "typescript": "^5.3.3",
+    "vite-tsconfig-paths": "^4.3.2",
+    "vitest": "^1.6.0"
+  }
+}

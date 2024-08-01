@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  template-db:
+    image: postgres:15-alpine
+    container_name: template-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: template-dev
+      PGDATA: /data/postgres
+    volumes:
+      - template-db:/data/postgres
+    ports:
+      - "127.0.0.1:5432:5432"
+    restart: on-failure
+
+volumes:
+  template-db:

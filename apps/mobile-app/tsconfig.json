@@ -1,0 +1,18 @@
+{
+  "extends": "@template/typescript-config/expo.json",
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js",
+    "jest.config.js",
+    "public/mockServiceWorker.js"
+  ],
+  "compilerOptions": {
+    "types": ["@types/jest", "@testing-library/jest-native", "node"],
+    "paths": {
+      "@/*": ["./src/*", "../backend/src/*"],
+      "@template/shared-types": ["../../packages/shared-types"]
+    },
+  }
+}
